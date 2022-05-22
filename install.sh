@@ -13,7 +13,7 @@ if ! [ -x "$(command -v sudo)" ]; then
 fi
 
 sudo apt update -qq
-sudo apt install -y -qq curl git
+sudo apt install -y -qq curl git p7zip-full
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
@@ -22,9 +22,25 @@ echo "$(tput setaf 6)" - ~/.gitconfig"$(tput sgr0)"
 ln -sf "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
-echo "$(tput setaf 3)"Installing bat and exa..."$(tput sgr0)"
+echo "$(tput setaf 3)"Installing bat..."$(tput sgr0)"
 
-sudo apt install -y -qq bat exa
+sudo apt install -y -qq bat
+
+echo "$(tput setaf 2)"...done"$(tput sgr0)"
+echo "$(tput setaf 3)"Installing exa..."$(tput sgr0)"
+
+cd /tmp
+curl -Lo exa.zip https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+7z x -oexa exa.zip
+cd exa
+sudo cp ./bin/* /usr/local/bin
+sudo cp ./man/* /usr/share/man/man1
+sudo cp ./completions/exa.bash /etc/bash_completion.d
+sudo cp ./completions/exa.fish /usr/share/fish/vendor_completions.d
+sudo cp ./completions/exa.zsh /usr/local/share/zsh/site-functions
+cd ..
+rm -rf exa
+cd "$SCRIPT_PATH"
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Configuring ZSH and oh-my-zsh..."$(tput sgr0)"
