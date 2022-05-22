@@ -73,11 +73,11 @@ ZSH_THEME="agnoster"
 
 PATH="$PATH:$HOME/.local/bin" # add ~/.local/bin to path to make thefuck work
 plugins=(
-  git
   aliases
-  thefuck
   colored-man-pages
   common-aliases
+  git
+  thefuck
 )
 
 source $ZSH/oh-my-zsh.sh
