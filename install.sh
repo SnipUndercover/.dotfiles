@@ -8,6 +8,9 @@ function fail() {
 SCRIPT_PATH="${0%/*}"
 cd "$SCRIPT_PATH" || exit
 SCRIPT_PATH="$PWD"
+
+echo "$(tput setaf 3)"Installing dependencies..."$(tput sgr0)"
+
 if ! sudo apt install -y curl; then
   echo 'Curl needs to be installed for this script to work.'
   fail 1
@@ -17,6 +20,7 @@ if ! sudo apt install -y git; then
   fail 1
 fi
 
+echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
 
 ln -s "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
@@ -39,8 +43,7 @@ if ! sudo apt install zsh -y; then
   fail 1;
 fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-rm ~/.zshrc
-ln -s "$SCRIPT_PATH"/.zshrc ~/.zshrc
+ln -sf "$SCRIPT_PATH"/.zshrc ~/.zshrc
 chsh -s "$(which zsh)"
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
