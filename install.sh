@@ -53,9 +53,25 @@ sudo apt install -y python3 python3-pip python3-dev python3-setuptools
 pip3 install thefuck --user
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
+
+while true; do
+  read -rep "Do you want to install Java 8 and 18? [yN] " -i "n" answer
+  case $answer in
+    [Yy]* )
+      break
+      ;;
+    [Nn]* )
+      echo "$(tput setaf 2)"...done. Exit and reopen the terminal to see effects."$(tput sgr0)"
+      exit 0
+      ;;
+    * )
+      echo 'Unknown answer.'
+      ;;
+  esac
+done
 echo "$(tput setaf 3)"Installing Java 8 and 18..."$(tput sgr0)"
 
-sudo apt install -y -qq \
+sudo apt install -qq \
   openjdk-18-jdk-headless \
   openjdk-18-jre-headless \
   openjdk-8-jdk-headless \
