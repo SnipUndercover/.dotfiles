@@ -77,6 +77,7 @@ plugins=(
   colored-man-pages
   common-aliases
   debian
+  extract
   git
   thefuck
 )
