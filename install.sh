@@ -40,7 +40,7 @@ if ! sudo apt install zsh -y; then
 fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 rm ~/.zshrc
-ln -s "$SCRIPT_PATH"/.zshrc ~
+ln -s "$SCRIPT_PATH"/.zshrc ~/.zshrc
 chsh -s "$(which zsh)"
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
