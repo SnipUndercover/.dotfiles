@@ -11,6 +11,10 @@ SCRIPT_PATH="$PWD"
 
 echo "$(tput setaf 3)"Installing dependencies..."$(tput sgr0)"
 
+if ! [ -x "$(command -v sudo)" ]; then
+  echo 'Could not find sudo. Please install sudo to use this script.'
+  fail 2
+fi
 if ! sudo apt install -y curl git; then
   echo 'Could not install dependencies.'
   fail 2
