@@ -8,7 +8,7 @@ SCRIPT_PATH="$PWD"
 echo "$(tput setaf 3)"Installing dependencies..."$(tput sgr0)"
 
 if ! [ -x "$(command -v sudo)" ]; then
-  echo 'Could not find sudo. Please install sudo to use this script.'
+  echo "$(tput setaf 1)"Could not find sudo. Please install sudo to use this script."$(tput sgr0)"
   exit 2
 fi
 
