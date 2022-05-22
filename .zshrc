@@ -76,6 +76,7 @@ plugins=(
   git
   aliases
   thefuck
+  colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
