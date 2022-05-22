@@ -70,9 +70,12 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+PATH="$PATH:$HOME/.local/bin" # add ~/.local/bin to path to make thefuck work
 plugins=(
   git
   aliases
+  thefuck
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,10 +111,6 @@ zstyle :compinstall filename '/home/michal/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-PATH="$PATH:$HOME/.local/bin" # add ~/.local/bin to path
-
-eval $(thefuck --alias) # fuck
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
