@@ -81,6 +81,7 @@ plugins=(
   git
   git-prompt
   jsontools
+  npm
   thefuck
 )
 
