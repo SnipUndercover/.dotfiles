@@ -24,11 +24,8 @@ ln -sf "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Installing bat and exa..."$(tput sgr0)"
 
-if ! sudo apt install -y bat; then
-  echo "$(tput setaf 3)"An error occurred while installing bat, continuing."$(tput sgr0)"
-fi
-if ! sudo apt install -y exa; then
-  echo "$(tput setaf 3)"An error occurred while installing exa, continuing."$(tput sgr0)"
+if ! sudo apt install -y bat exa; then
+  echo "$(tput setaf 3)"An error occurred while installing bat and exa, continuing."$(tput sgr0)"
 fi
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
