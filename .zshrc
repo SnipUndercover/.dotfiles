@@ -76,6 +76,7 @@ plugins=(
   aliases
   colored-man-pages
   common-aliases
+  debian
   git
   thefuck
 )
@@ -139,12 +140,9 @@ alias lrt='exa -1Fh -s newest'
 alias lsr='exa -laRFh'
 alias lsn='exa -1'
 
-# override common-aliases packed files
-unalias zip
-unalias rar
-unalias tar
-unalias tar.gz
-unalias ace
+# override debian aliases
+unalias acs
+alias cs='apt-cache search'
 
 # override oh-my-zsh aliases
 alias ls='exa --color=auto'
