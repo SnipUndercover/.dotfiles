@@ -79,7 +79,6 @@ plugins=(
   debian
   extract
   git
-  git-prompt
   jsontools
   npm
   nvm
