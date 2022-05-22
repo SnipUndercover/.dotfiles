@@ -81,7 +81,7 @@ npm install -g typescript
 cd "$SCRIPT_PATH"
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
-echo "$(tput setaf 3)"Configuring thefuck..."$(tput sgr0)"
+echo "$(tput setaf 3)"Installing thefuck..."$(tput sgr0)"
 
 sudo apt install -y -qq python3 python3-pip python3-dev python3-setuptools
 pip3 install thefuck --user --no-warn-script-location
