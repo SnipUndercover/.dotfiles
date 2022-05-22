@@ -79,6 +79,7 @@ plugins=(
   debian
   extract
   git
+  git-prompt
   thefuck
 )
 
