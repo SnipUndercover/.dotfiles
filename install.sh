@@ -19,7 +19,7 @@ fi
 
 echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
 
-ln -s "$SCRIPT_PATH"/.gitconfig ~
+ln -s "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Installing bat and exa..."$(tput sgr0)"
