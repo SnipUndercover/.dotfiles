@@ -39,6 +39,7 @@ if ! sudo apt install zsh -y; then
   fail 1;
 fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+rm ~/.zshrc
 ln -s "$SCRIPT_PATH"/.zshrc ~
 chsh -s "$(which zsh)"
 
