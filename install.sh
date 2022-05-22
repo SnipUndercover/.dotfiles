@@ -6,14 +6,14 @@ function fail() {
 }
 
 SCRIPT_PATH="${0%/*}"
-cd "$SCRIPT_PATH" || exit
+cd "$SCRIPT_PATH" || fail 1
 SCRIPT_PATH="$PWD"
 
 echo "$(tput setaf 3)"Installing dependencies..."$(tput sgr0)"
 
 if ! sudo apt install -y curl git; then
   echo 'Could not install dependencies.'
-  fail 1
+  fail 2
 fi
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
@@ -33,7 +33,7 @@ echo "$(tput setaf 3)"Configuring ZSH and oh-my-zsh..."$(tput sgr0)"
 
 if ! sudo apt install zsh -y; then
   echo "$(tput setaf 3)"An error occurred while installing zsh. Cannot proceed further."$(tput sgr0)"
-  fail 1;
+  fail 2;
 fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 ln -sf "$SCRIPT_PATH"/.zshrc ~/.zshrc
@@ -57,7 +57,7 @@ echo "$(tput setaf 3)"Configuring thefuck..."$(tput sgr0)"
 
 if ! sudo apt install -y python3 python3-pip python3-dev python3-setuptools; then 
   echo "$(tput setaf 3)"An error occurred while installing python. Cannot proceed further."$(tput sgr0)"
-  fail 1;
+  fail 2;
 fi
 if ! pip3 install thefuck --user; then
   echo "$(tput setaf 3)"An error occurred while installing thefuck, continuing."$(tput sgr0)"
