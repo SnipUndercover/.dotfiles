@@ -11,12 +11,8 @@ SCRIPT_PATH="$PWD"
 
 echo "$(tput setaf 3)"Installing dependencies..."$(tput sgr0)"
 
-if ! sudo apt install -y curl; then
-  echo 'Curl needs to be installed for this script to work.'
-  fail 1
-fi
-if ! sudo apt install -y git; then
-  echo 'Git needs to be installed for this script to work.'
+if ! sudo apt install -y curl git; then
+  echo 'Could not install dependencies.'
   fail 1
 fi
 
