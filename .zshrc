@@ -141,9 +141,8 @@ alias lrt='exa -1Fh -s newest'
 alias lsr='exa -laRFh'
 alias lsn='exa -1'
 
-# override debian aliases
-unalias acs
-alias cs='apt-cache search'
+# add an acs alias from the aliases plugin
+alias aliases='\acs'
 
 # override oh-my-zsh aliases
 alias ls='exa --color=auto'
