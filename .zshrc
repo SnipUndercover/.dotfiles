@@ -80,6 +80,7 @@ plugins=(
   extract
   git
   git-prompt
+  jsontools
   thefuck
 )
 
