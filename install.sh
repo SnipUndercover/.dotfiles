@@ -28,10 +28,10 @@ sudo apt install -y -qq bat exa
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Configuring ZSH and oh-my-zsh..."$(tput sgr0)"
 
-sudo apt install -y -qq zsh 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-ln -sf "$SCRIPT_PATH"/.zshrc ~/.zshrc
+sudo apt install -y -qq zsh
 chsh -s "$(which zsh)"
+ln -sf "$SCRIPT_PATH"/.zshrc ~/.zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Configuring nvm..."$(tput sgr0)"
