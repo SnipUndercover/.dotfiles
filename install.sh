@@ -37,7 +37,7 @@ echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Configuring nvm..."$(tput sgr0)"
 
 cd ~
-git clone https://github.com/nvm-sh/nvm.git
+git clone https://github.com/nvm-sh/nvm.git .nvm
 cd nvm
 git checkout "$(git tag -l | sort -Vr | head -1)"
 # shellcheck disable=SC1091
