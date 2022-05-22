@@ -5,24 +5,29 @@ SCRIPT_PATH="${0%/*}"
 cd "$SCRIPT_PATH"
 SCRIPT_PATH="$PWD"
 
-echo "$(tput setaf 3)"Installing dependencies..."$(tput sgr0)"
-
 if ! [ -x "$(command -v sudo)" ]; then
   echo "$(tput setaf 1)"Could not find sudo. Please install sudo to use this script."$(tput sgr0)"
   exit 2
 fi
 
+echo "$(tput setaf 3)"Updating apt..."$(tput sgr0)"
+
 sudo apt update -qq
-sudo apt install -y -qq curl git p7zip-full
-
-echo "$(tput setaf 2)"...done"$(tput sgr0)"
-echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
-
-echo "$(tput setaf 6)" - ~/.gitconfig"$(tput sgr0)"
-ln -sf "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Installing applications..."$(tput sgr0)"
+
+echo "$(tput setaf 6)"- git"$(tput sgr0)"
+sudo apt install -y -qq git
+
+echo "$(tput setaf 6)"- curl"$(tput sgr0)"
+sudo apt install -y -qq curl
+
+echo "$(tput setaf 6)"- 7z"$(tput sgr0)"
+sudo apt install -y -qq p7zip-full
+
+echo "$(tput setaf 6)"- vim"$(tput sgr0)"
+sudo apt install -y -qq vim
 
 echo "$(tput setaf 6)"- bat"$(tput sgr0)"
 sudo apt install -y -qq bat
@@ -41,8 +46,11 @@ cd ..
 rm -rf exa
 cd "$SCRIPT_PATH"
 
-echo "$(tput setaf 6)"- vim"$(tput sgr0)"
-sudo apt install -y -qq vim
+echo "$(tput setaf 2)"...done"$(tput sgr0)"
+echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
+
+echo "$(tput setaf 6)" - ~/.gitconfig"$(tput sgr0)"
+ln -sf "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Configuring ZSH and oh-my-zsh..."$(tput sgr0)"
