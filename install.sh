@@ -5,8 +5,13 @@ SCRIPT_PATH="${0%/*}"
 cd "$SCRIPT_PATH"
 SCRIPT_PATH="$PWD"
 
-if ! [ -x "$(command -v sudo)" ]; then
+if ! command -v sudo; then
   echo "$(tput setaf 1)"Could not find sudo. Please install sudo to use this script."$(tput sgr0)"
+  exit 2
+fi
+
+if ! sudo -v; then
+  echo "$(tput setaf 1)"You "do" not appear to have sudo privileges."$(tput sgr0)"
   exit 2
 fi
 
