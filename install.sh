@@ -12,6 +12,7 @@ if ! [ -x "$(command -v sudo)" ]; then
   exit 2
 fi
 
+sudo apt update -qq
 sudo apt install -y -qq curl git
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
