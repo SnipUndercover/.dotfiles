@@ -77,6 +77,7 @@ plugins=(
   aliases
   thefuck
   colored-man-pages
+  common-aliases
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,8 +127,26 @@ export NVM_DIR="$HOME/.nvm"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias l='exa -lahF'
-alias la='exa -a'
-alias ll='exa -lhF'
-alias lsa='exa -lahF'
-alias lla='exa -lahF'
+# override common-aliases ls
+alias l='exa -laFh'
+alias la='exa -laFh'
+alias lr='exa -RF -s oldest'
+alias lt='exa -lF -s oldest'
+alias ll='exa -lh'
+alias ldot='exa -ld .*'
+alias lart='exa -1Fah -s newest'
+alias lrt='exa -1Fh -s newest'
+alias lsr='exa -laRFh'
+alias lsn='exa -1'
+
+# override common-aliases packed files
+unalias zip
+unalias rar
+unalias tar
+unalias tar.gz
+unalias ace
+
+# override oh-my-zsh aliases
+alias ls='exa --color=auto'
+alias lsa='exa -laFh'
+alias lla='exa -laFh'
