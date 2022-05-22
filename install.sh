@@ -22,17 +22,6 @@ echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
 ln -s "$SCRIPT_PATH"/.gitconfig ~
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
-echo "$(tput setaf 3)"Installing Java 8 and 18..."$(tput sgr0)"
-
-if ! sudo apt install -y \
-  openjdk-18-jdk-headless \
-  openjdk-18-jre-headless \
-  openjdk-8-jdk-headless \
-  openjdk-8-jre-headless; then
-  echo "$(tput setaf 3)"An error occurred while installing Java 18 and 8, continuing."$(tput sgr0)"
-fi
-
-echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Installing bat and exa..."$(tput sgr0)"
 
 if ! sudo apt install -y bat; then
@@ -75,6 +64,17 @@ if ! sudo apt install -y python3 python3-pip python3-dev python3-setuptools; the
 fi
 if ! pip3 install thefuck --user; then
   echo "$(tput setaf 3)"An error occurred while installing thefuck, continuing."$(tput sgr0)"
+fi
+
+echo "$(tput setaf 2)"...done"$(tput sgr0)"
+echo "$(tput setaf 3)"Installing Java 8 and 18..."$(tput sgr0)"
+
+if ! sudo apt install -y \
+  openjdk-18-jdk-headless \
+  openjdk-18-jre-headless \
+  openjdk-8-jdk-headless \
+  openjdk-8-jre-headless; then
+  echo "$(tput setaf 3)"An error occurred while installing Java 18 and 8, continuing."$(tput sgr0)"
 fi
 
 echo "$(tput setaf 2)"...done. Exit and reopen the terminal to see effects."$(tput sgr0)"
