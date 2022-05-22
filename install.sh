@@ -22,13 +22,12 @@ echo "$(tput setaf 6)" - ~/.gitconfig"$(tput sgr0)"
 ln -sf "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
-echo "$(tput setaf 3)"Installing bat..."$(tput sgr0)"
+echo "$(tput setaf 3)"Installing applications..."$(tput sgr0)"
 
+echo "$(tput setaf 6)"- bat"$(tput sgr0)"
 sudo apt install -y -qq bat
 
-echo "$(tput setaf 2)"...done"$(tput sgr0)"
-echo "$(tput setaf 3)"Installing exa..."$(tput sgr0)"
-
+echo "$(tput setaf 6)"- exa"$(tput sgr0)"
 cd /tmp
 curl -Lo exa.zip https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
 7z x -oexa exa.zip
@@ -41,6 +40,9 @@ sudo cp ./completions/exa.zsh /usr/local/share/zsh/site-functions
 cd ..
 rm -rf exa
 cd "$SCRIPT_PATH"
+
+echo "$(tput setaf 6)"- vim"$(tput sgr0)"
+sudo apt install -y -qq vim
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Configuring ZSH and oh-my-zsh..."$(tput sgr0)"
