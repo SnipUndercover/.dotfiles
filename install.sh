@@ -95,24 +95,25 @@ while true; do
   read -rep "Do you want to install Java 8 and 18? [yN] " -i "n" answer
   case $answer in
     [Yy]* )
+      echo "$(tput setaf 3)"Installing Java 8 and 18..."$(tput sgr0)"
+      sudo apt install -qq \
+        openjdk-18-jdk-headless \
+        openjdk-18-jre-headless \
+        openjdk-8-jdk-headless \
+        openjdk-8-jre-headless
       break
       ;;
     [Nn]* )
-      echo "$(tput setaf 2)"...done. Exit and reopen the terminal to see effects."$(tput sgr0)"
-      exit 0
+      echo "$(tput setaf 3)"Skipping Java install."$(tput sgr0)"
+      break
       ;;
     * )
       echo 'Unknown answer.'
       ;;
   esac
 done
-echo "$(tput setaf 3)"Installing Java 8 and 18..."$(tput sgr0)"
-
-sudo apt install -qq \
-  openjdk-18-jdk-headless \
-  openjdk-18-jre-headless \
-  openjdk-8-jdk-headless \
-  openjdk-8-jre-headless
 
 echo "$(tput setaf 2)"...done. Exit and reopen the terminal to see effects."$(tput sgr0)"
+echo "$(tput setaf 2)"You might want to install a powerline patched font, such as the ones provided in the fonts/ folder."$(tput sgr0)"
+
 
