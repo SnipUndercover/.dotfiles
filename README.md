@@ -1,6 +1,6 @@
 # `~/.dotfiles`
-`.dotfiles` are text-based files that live on your home directory and carry your own environment configuration.  
-By putting them in a repository, you can clone and set them up on any system.  
+`.dotfiles` are text-based files that live on your home directory and carry your environment configuration.  
+By putting them in a repository, you can clone and restore that environment on any system.  
 Those are mine.
 
 ## Prerequisites
@@ -38,7 +38,7 @@ The `install.sh` script will...
     - Install [`TypeScript`](https://github.com/microsoft/TypeScript) globally
 1. Install `OpenJDK 8` and `18` `JDK` and `JRE`s *(optional)*
 
-This repository also contains compiled [`Cascadia Code`](https://github.com/microsoft/cascadia-code) *(release&nbsp;[`2111.01`](https://github.com/microsoft/cascadia-code/releases/tag/v2111.01))* fonts.
+This repository also contains compiled  [`Cascadia Code`](https://github.com/microsoft/cascadia-code) *(release&nbsp;[`2111.01`](https://github.com/microsoft/cascadia-code/releases/tag/v2111.01))* fonts.
 
 ## `~/.zshrc`
 The provided `~/.zshrc` uses the following plugins:
