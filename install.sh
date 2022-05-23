@@ -57,7 +57,7 @@ cd "$SCRIPT_PATH"
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
 echo "$(tput setaf 3)"Creating .dotfile symlinks..."$(tput sgr0)"
 
-echo "$(tput setaf 6)" - ~/.gitconfig"$(tput sgr0)"
+echo "$(tput setaf 6)"- ~/.gitconfig"$(tput sgr0)"
 ln -sf "$SCRIPT_PATH"/.gitconfig ~/.gitconfig
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
