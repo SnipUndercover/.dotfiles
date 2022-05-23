@@ -44,8 +44,11 @@ curl -Lo exa.zip https://github.com/ogham/exa/releases/download/v0.10.1/exa-linu
 cd exa
 sudo cp ./bin/* /usr/local/bin
 sudo cp ./man/* /usr/share/man/man1
+sudo mkdir -p /etc/bash_completion.d
 sudo cp ./completions/exa.bash /etc/bash_completion.d
+sudo mkdir -p /usr/share/fish/vendor_completions.d
 sudo cp ./completions/exa.fish /usr/share/fish/vendor_completions.d
+sudo mkdir -p /usr/local/share/zsh/site-functions
 sudo cp ./completions/exa.zsh /usr/local/share/zsh/site-functions
 cd ..
 rm -rf exa
@@ -112,3 +115,4 @@ sudo apt install -qq \
   openjdk-8-jre-headless
 
 echo "$(tput setaf 2)"...done. Exit and reopen the terminal to see effects."$(tput sgr0)"
+echo "$(tput setaf 2)"You might want to install the package \"fonts-powerline\"."$(tput sgr0)"
