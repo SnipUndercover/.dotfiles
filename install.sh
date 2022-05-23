@@ -5,7 +5,7 @@ SCRIPT_PATH="${0%/*}"
 cd "$SCRIPT_PATH"
 SCRIPT_PATH="$PWD"
 
-if ! command -v sudo; then
+if ! command -v sudo 1> /dev/null; then
   echo "$(tput setaf 1)"Could not find sudo. Please install sudo to use this script."$(tput sgr0)"
   exit 2
 fi
@@ -115,4 +115,4 @@ sudo apt install -qq \
   openjdk-8-jre-headless
 
 echo "$(tput setaf 2)"...done. Exit and reopen the terminal to see effects."$(tput sgr0)"
-echo "$(tput setaf 2)"You might want to install the package \"fonts-powerline\"."$(tput sgr0)"
+
