@@ -51,7 +51,7 @@ sudo cp ./completions/exa.fish /usr/share/fish/vendor_completions.d
 sudo mkdir -p /usr/local/share/zsh/site-functions
 sudo cp ./completions/exa.zsh /usr/local/share/zsh/site-functions
 cd ..
-rm -rf exa
+rm -rf exa exa.zip
 cd "$SCRIPT_PATH"
 
 echo "$(tput setaf 2)"...done"$(tput sgr0)"
