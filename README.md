@@ -16,6 +16,9 @@ cd .dotfiles
 ./install.sh
 ```
 
+## Manual Installation
+In case you want to perform a single action *(maybe because you don't want to install `nvm` or `omz` twice)*, you may use one or more scripts from the `manual/` folder.  
+
 ## Contents
 The `install.sh` script will...
 1. Perform an `apt update`
